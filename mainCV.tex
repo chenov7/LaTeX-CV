@@ -1,0 +1,253 @@
+\documentclass[a4paper,10pt]{article}
+
+% ============================================
+% PACKAGES
+% ============================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{paracol}
+\usepackage{setspace}
+
+% ============================================
+% PAGE LAYOUT
+% ============================================
+\geometry{
+    top=1cm,
+    bottom=1cm,
+    left=1cm,
+    right=1cm
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setstretch{1.05}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+% ============================================
+% COLORS
+% ============================================
+\definecolor{primary}{RGB}{39,76,175}
+\definecolor{darkgray}{RGB}{68,68,68}
+\definecolor{mediumgray}{RGB}{102,102,102}
+\definecolor{lightgray}{RGB}{119,119,119}
+
+% ============================================
+% CUSTOM COMMANDS
+% ============================================
+
+% Section title (blue)
+\newcommand{\cvsection}[1]{%
+    \vspace{1.2em}
+    {\color{primary}\large\bfseries #1}
+    \vspace{0.6em}
+    \par
+}
+
+% Section title for right column (more spacing)
+\newcommand{\cvsectionright}[1]{%
+    \vspace{2.5em}
+    {\color{primary}\large\bfseries #1}
+    \vspace{0.6em}
+    \par
+}
+
+% Subsection (experience/formation title)
+\newcommand{\cvsubsection}[2]{%
+    \textbf{#1} {\color{primary}-- #2}
+    \par
+}
+
+% Date in gray
+\newcommand{\cvdate}[1]{%
+    {\color{lightgray}\small #1}
+    \par
+}
+
+% Description text
+\newcommand{\cvdesc}[1]{%
+    {\color{darkgray}\small #1}
+    \par
+}
+
+% Skill bullet point (small 3pt square)
+\newcommand{\cvskill}[1]{%
+    {\color{mediumgray}\small\raisebox{0.3ex}{\rule{3pt}{3pt}}\hspace{0.5em}#1}
+    \par
+}
+
+% Contact item (icon with fixed width for alignment)
+\newcommand{\cvcontact}[2]{%
+    {\color{lightgray}\makebox[1.2em][l]{#1}#2}
+    \par\vspace{0.2em}
+}
+
+% ============================================
+% DOCUMENT
+% ============================================
+\begin{document}
+
+% --------------------------------------------
+% HEADER
+% --------------------------------------------
+\begin{minipage}[t]{0.65\textwidth}
+    {\Huge\bfseries\color{darkgray} Firstname LASTNAME}
+
+    \vspace{0.5em}
+    {\color{mediumgray}\textit{Short description or professional headline goes here.}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.30\textwidth}
+    \vspace{0pt}
+    \flushright
+    \small
+    \begin{tabular}{@{}l@{\hspace{0.5em}}l@{}}
+        {\color{lightgray}\faPhone} & {\color{lightgray}+00 00 00 00 00} \\[0.3em]
+        {\color{lightgray}\faEnvelope} & {\color{lightgray}email@example.com} \\[0.3em]
+        {\color{lightgray}\faLinkedin} & {\color{lightgray}linkedin.com/in/} \\
+        & {\color{lightgray}your-profile} \\[0.3em]
+        {\color{lightgray}\faHome} & {\color{lightgray}City, Country} \\[0.3em]
+        {\color{lightgray}\faIdCard} & {\color{lightgray}Driver's License} \\
+    \end{tabular}
+\end{minipage}
+
+\vspace{1.5em}
+
+% --------------------------------------------
+% TWO COLUMNS LAYOUT
+% --------------------------------------------
+\columnratio{0.63}
+\setlength{\columnsep}{1.5em}
+\begin{paracol}{2}
+
+% ============================================
+% LEFT COLUMN
+% ============================================
+
+% --- EDUCATION ---
+\cvsection{Education}
+
+\cvsubsection{Degree\_1}{Institution\_1}
+\cvdate{MM/YYYY -- MM/YYYY}
+\cvdesc{Description\_1: Brief description of the degree, achievements, or relevant coursework.}
+
+\vspace{0.8em}
+\cvsubsection{Degree\_2}{Institution\_2}
+\cvdate{MM/YYYY}
+\cvdesc{Description\_2: Brief description of the degree, specializations, or notable achievements.}
+
+% --- ACADEMIC PROJECTS ---
+\cvsection{Academic Projects}
+
+\textbf{Project\_1}\\
+\cvdesc{Team of X -- Duration -- Technology/Language\\
+Description\_1: Brief description of the project, your role, and key accomplishments.}
+
+\vspace{0.8em}
+\textbf{Project\_2}\\
+\cvdesc{Role -- Team of X -- Duration -- Technology/Language\\
+Description\_2: Brief description of the project and its objectives.}
+
+\vspace{0.8em}
+\textbf{Project\_3}\\
+\cvdesc{Duration -- Solo project -- Technology/Language\\
+Description\_3: Brief description of the project.}
+
+\vspace{0.8em}
+\textbf{Project\_4}\\
+\cvdesc{Role -- Team of X -- Duration -- Technology/Language\\
+Description\_4: Brief description of the project and technologies used.}
+
+% --- EXPERIENCE ---
+\cvsection{Experience}
+
+\cvsubsection{Job\_Title\_1}{Company\_1}
+\cvdate{MM/YYYY -- Present}
+\cvdesc{Description\_1: Brief description of your responsibilities and achievements.\\
+-> Key skills acquired: skill\_a, skill\_b, skill\_c}
+
+\vspace{0.8em}
+\cvsubsection{Job\_Title\_2}{Company\_2}
+\cvdate{MM/YYYY -- MM/YYYY}
+\cvdesc{Description\_2: Brief description of your role and accomplishments.\\
+-> Key skills acquired: skill\_d, skill\_e}
+
+\vspace{0.8em}
+\cvsubsection{Job\_Title\_3}{Company\_3}
+\cvdate{MM/YYYY}
+\cvdesc{Description\_3: Brief description of the experience.\\
+-> Key skill acquired: skill\_f}
+
+% ============================================
+% RIGHT COLUMN
+% ============================================
+\switchcolumn
+\setlength{\leftskip}{2.5em}
+
+% --- STRENGTHS ---
+\cvsection{Strengths}
+
+\textbf{Strength\_1, Strength\_2, Strength\_3, Strength\_4, Strength\_5}
+
+% --- SKILLS ---
+\cvsection{Skills}
+
+\cvskill{Skill\_1}
+\cvskill{Skill\_2}
+\cvskill{Skill\_3}
+\cvskill{Skill\_4}
+\cvskill{Skill\_5}
+\cvskill{Skill\_6}
+\cvskill{Skill\_7}
+\cvskill{Skill\_8}
+\cvskill{Skill\_9}
+\cvskill{Skill\_10}
+\cvskill{Skill\_11}
+\cvskill{Skill\_12}
+
+\vspace{0.8em}
+\textbf{Currently Learning}
+\vspace{0.4em}
+
+\cvskill{Skill\_13}
+\cvskill{Skill\_14}
+\cvskill{Skill\_15}
+
+% --- LANGUAGES ---
+\cvsection{Languages}
+
+\textbf{Language\_1}\\
+{\color{darkgray}\small Level (e.g., C1)\\Certification: Score}
+
+\vspace{0.6em}
+\textbf{Language\_2}\\
+{\color{darkgray}\small Level (e.g., B2)}
+
+\vspace{0.6em}
+\textbf{Language\_3}\\
+{\color{darkgray}\small Level (e.g., B1)}
+
+% --- INTERESTS ---
+\cvsection{Interests}
+
+\textbf{Interest\_1}\\
+{\color{darkgray}\small Description\_1}
+
+\vspace{0.5em}
+\textbf{Interest\_2}\\
+{\color{darkgray}\small Description\_2}
+
+\vspace{0.5em}
+\textbf{Interest\_3}\\
+{\color{darkgray}\small Description\_3}
+
+\end{paracol}
+
+\end{document}
