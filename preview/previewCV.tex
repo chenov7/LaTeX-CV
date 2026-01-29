@@ -1,0 +1,253 @@
+\documentclass[a4paper,10pt]{article}
+
+% ============================================
+% PACKAGES
+% ============================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{paracol}
+\usepackage{setspace}
+
+% ============================================
+% PAGE LAYOUT
+% ============================================
+\geometry{
+    top=1cm,
+    bottom=1cm,
+    left=1cm,
+    right=1cm
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setstretch{1.05}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+% ============================================
+% COLORS
+% ============================================
+\definecolor{primary}{RGB}{39,76,175}
+\definecolor{darkgray}{RGB}{68,68,68}
+\definecolor{mediumgray}{RGB}{102,102,102}
+\definecolor{lightgray}{RGB}{119,119,119}
+
+% ============================================
+% CUSTOM COMMANDS
+% ============================================
+
+% Section title (blue)
+\newcommand{\cvsection}[1]{%
+    \vspace{1.2em}
+    {\color{primary}\large\bfseries #1}
+    \vspace{0.6em}
+    \par
+}
+
+% Section title for right column (more spacing)
+\newcommand{\cvsectionright}[1]{%
+    \vspace{2.5em}
+    {\color{primary}\large\bfseries #1}
+    \vspace{0.6em}
+    \par
+}
+
+% Subsection (experience/formation title)
+\newcommand{\cvsubsection}[2]{%
+    \textbf{#1} {\color{primary}-- #2}
+    \par
+}
+
+% Date in gray
+\newcommand{\cvdate}[1]{%
+    {\color{lightgray}\small #1}
+    \par
+}
+
+% Description text
+\newcommand{\cvdesc}[1]{%
+    {\color{darkgray}\small #1}
+    \par
+}
+
+% Skill bullet point (small 3pt square)
+\newcommand{\cvskill}[1]{%
+    {\color{mediumgray}\small\raisebox{0.3ex}{\rule{3pt}{3pt}}\hspace{0.5em}#1}
+    \par
+}
+
+% Contact item (icon with fixed width for alignment)
+\newcommand{\cvcontact}[2]{%
+    {\color{lightgray}\makebox[1.2em][l]{#1}#2}
+    \par\vspace{0.2em}
+}
+
+% ============================================
+% DOCUMENT
+% ============================================
+\begin{document}
+
+% --------------------------------------------
+% HEADER
+% --------------------------------------------
+\begin{minipage}[t]{0.65\textwidth}
+    {\Huge\bfseries\color{darkgray} Pierre DUROCHER}
+
+    \vspace{0.5em}
+    {\color{mediumgray}\textit{Software Engineer -- Specialized in Cloud Architecture and Distributed Systems}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.30\textwidth}
+    \vspace{0pt}
+    \flushright
+    \small
+    \begin{tabular}{@{}l@{\hspace{0.5em}}l@{}}
+        {\color{lightgray}\faPhone} & {\color{lightgray}+33 6 66 66 66 66} \\[0.3em]
+        {\color{lightgray}\faEnvelope} & {\color{lightgray}p.durocher@email.com} \\[0.3em]
+        {\color{lightgray}\faLinkedin} & {\color{lightgray}linkedin.com/in/} \\
+        & {\color{lightgray}pierre-durocher} \\[0.3em]
+        {\color{lightgray}\faHome} & {\color{lightgray}Paris, France} \\[0.3em]
+        {\color{lightgray}\faIdCard} & {\color{lightgray}Driver Licence} \\
+    \end{tabular}
+\end{minipage}
+
+\vspace{1.5em}
+
+% --------------------------------------------
+% TWO COLUMNS LAYOUT
+% --------------------------------------------
+\columnratio{0.63}
+\setlength{\columnsep}{1.5em}
+\begin{paracol}{2}
+
+% ============================================
+% LEFT COLUMN
+% ============================================
+
+% --- EDUCATION ---
+\cvsection{Education}
+
+\cvsubsection{Master's in Computer Science}{École Polytechnique, Paris}
+\cvdate{09/2019 -- 06/2021}
+\cvdesc{Specialization in Distributed Systems and Cloud Computing. GPA: 3.8/4.0. Thesis on microservices architecture optimization.}
+
+\vspace{0.8em}
+\cvsubsection{Bachelor's in Engineering}{Université Paris-Tech}
+\cvdate{09/2016 -- 06/2019}
+\cvdesc{Major in Software Engineering. Recipient of the Academic Excellence Scholarship. Completed internship at leading tech company.}
+
+% --- ACADEMIC PROJECTS ---
+\cvsection{Academic Projects}
+
+\textbf{Distributed Task Scheduler}\\
+\cvdesc{Team of 4 -- 6 months -- Python, Docker, Kubernetes\\
+Developed a high-performance task scheduler for distributed computing. Optimized throughput by 40\% through load balancing algorithms. Containerized with Docker and orchestrated using Kubernetes.}
+
+\vspace{0.8em}
+\textbf{Real-time Data Pipeline}\\
+\cvdesc{Lead Developer -- Team of 3 -- 4 months -- Kafka, Spark, Python\\
+Architected and implemented a real-time data processing pipeline handling 500K events per second. Implemented fault tolerance and auto-scaling mechanisms.}
+
+\vspace{0.8em}
+\textbf{Compiler Optimization Project}\\
+\cvdesc{3 months -- Solo project -- C++, LLVM\\
+Built compiler optimizations for functional languages. Achieved 25\% improvement in code generation efficiency.}
+
+\vspace{0.8em}
+\textbf{Cloud Cost Analytics Dashboard}\\
+\cvdesc{Full-stack Developer -- Team of 2 -- 5 months -- React, Node.js, PostgreSQL\\
+Created an analytics platform for monitoring AWS costs in real-time. Helped organization reduce cloud spending by 20\%.}
+
+% --- EXPERIENCE ---
+\cvsection{Experience}
+
+\cvsubsection{Senior Software Engineer}{TechCorp SAS}
+\cvdate{03/2023 -- Present}
+\cvdesc{Led development of microservices architecture serving 2M+ users. Mentored 3 junior engineers. Reduced API latency by 35\% through optimization work.\\
+-> Key skills acquired: Kubernetes, gRPC, Performance tuning, Team leadership}
+
+\vspace{0.8em}
+\cvsubsection{Software Engineer}{CloudSys GmbH}
+\cvdate{07/2021 -- 02/2023}
+\cvdesc{Developed backend services using Go and Python. Implemented CI/CD pipelines with GitLab CI. Contributed to 4 major product releases.\\
+-> Key skills acquired: Go, PostgreSQL, Cloud DevOps, Agile methodologies}
+
+\vspace{0.8em}
+\cvsubsection{Software Engineering Intern}{Innovate Labs}
+\cvdate{06/2020 -- 08/2020}
+\cvdesc{Developed features for internal data platform. Fixed 15+ bugs reported by QA team. Earned full-time offer upon graduation.\\
+-> Key skill acquired: Java, Software testing, Professional development}
+
+% ============================================
+% RIGHT COLUMN
+% ============================================
+\switchcolumn
+\setlength{\leftskip}{2.5em}
+
+% --- STRENGTHS ---
+\cvsection{Strengths}
+
+\textbf{Problem-solving, System design, Leadership, Attention to detail, Communication}
+
+% --- SKILLS ---
+\cvsection{Skills}
+
+\cvskill{Python, Go, Java, C++}
+\cvskill{Docker, Kubernetes, AWS}
+\cvskill{PostgreSQL, MongoDB, Redis}
+\cvskill{Microservices architecture}
+\cvskill{RESTful APIs, gRPC}
+\cvskill{CI/CD pipelines (GitLab, Jenkins)}
+\cvskill{System design and scalability}
+\cvskill{Linux/Unix}
+\cvskill{Git version control}
+\cvskill{SQL optimization}
+\cvskill{Agile/Scrum}
+\cvskill{Technical documentation}
+
+\vspace{0.8em}
+\textbf{Currently Learning}
+\vspace{0.4em}
+
+\cvskill{Rust}
+\cvskill{Machine Learning basics}
+\cvskill{WebAssembly}
+
+% --- LANGUAGES ---
+\cvsection{Languages}
+
+\textbf{French}\\
+{\color{darkgray}\small Native speaker}
+
+\vspace{0.6em}
+\textbf{English}\\
+{\color{darkgray}\small Fluent (C1)\\TOEIC: 920/990}
+
+\vspace{0.6em}
+\textbf{German}\\
+{\color{darkgray}\small Intermediate (B1)}
+
+% --- INTERESTS ---
+\cvsection{Interests}
+
+\textbf{Open Source Contributions}\\
+{\color{darkgray}\small Active contributor to Kubernetes and Prometheus projects}
+
+\vspace{0.5em}
+\textbf{Technology Blogging}\\
+{\color{darkgray}\small Write technical articles on distributed systems and cloud architecture}
+
+\vspace{0.5em}
+\textbf{Rock Climbing}\\
+{\color{darkgray}\small Weekend climber, completed several outdoor climbing routes}
+
+\end{paracol}
+
+\end{document}
