@@ -92,7 +92,7 @@ This template requires the following LaTeX packages:
 
 ## Example
 
-A complete example CV with a software engineer profile is provided in `preview/previewCV.tex`.
+A complete example CV with a software engineer profile is provided in `preview/previewCV.tex` and a compiled PDF in `preview/previewCV.pdf`.
 
 ## Notes
 
