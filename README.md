@@ -25,6 +25,7 @@ LaTeX-CV/
 ├── mainCV.tex          # Main CV template with placeholders
 ├── preview/
 │   └── previewCV.tex   # Example CV with sample data (Engineer profile)
+|   └── previewCV.pdf   # Compiled PDF of the example CV
 └── README.md           # This file
 ```
 
