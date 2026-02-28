@@ -76,7 +76,7 @@ Or use an online LaTeX editor like Overleaf.
 
 ### Right Column
 - Strengths
-- Skills (technical skills and currently learning)
+- Skills (organized by custom categories)
 - Languages
 - Interests
 
