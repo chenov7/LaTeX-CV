@@ -1,0 +1,182 @@
+% ============================================================
+%  CV — Modern template (photo header, two-column, paracol)
+% ============================================================
+\documentclass[9pt,a4paper]{extarticle}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[osf,sc]{mathpazo}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage[a4paper,top=0.9cm,bottom=0.9cm,left=1.3cm,right=1.3cm]{geometry}
+\usepackage{paracol}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{silence}
+\WarningFilter{babel}{Command \showhyphens}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\emergencystretch=1.5em
+\hyphenpenalty=400
+\providecommand{\up}[1]{\textsuperscript{#1}}
+\newcommand{\lin}[1]{{\fontfamily{ppl}\selectfont #1}}
+\definecolor{accent}{RGB}{39,76,175}
+\newcommand{\cvsection}[1]{%
+  \par\vspace{8pt}%
+  {\noindent\color{accent}\large\scshape\textls[70]{#1}\par}%
+  \vspace{1.5pt}{\noindent\color{accent}\rule{\linewidth}{0.5pt}\par}%
+  \vspace{3.5pt}%
+}
+\newcommand{\cventry}[3]{%
+  \par\vspace{5pt}\noindent
+  {\bfseries #1}\hfill{\itshape\small #3}\par
+  \vspace{0.5pt}\noindent{\small #2}\par
+}
+\newcommand{\cvlang}[2]{\noindent #1\hfill{\itshape #2}\par\vspace{2pt}}
+\newcommand{\cvdomain}[2]{%
+  {\small\bfseries\raggedright\hyphenpenalty=10000 #1\par}\vspace{1.5pt}%
+  {\footnotesize\raggedright #2\par}}
+\setlist[itemize]{label=\raisebox{0.22ex}{\scriptsize$\bullet$},
+  leftmargin=1.1em, itemsep=1.2pt, topsep=3pt, parsep=0pt, partopsep=0pt}
+
+\begin{document}
+
+% ---------- HEADER ----------
+\noindent
+\begin{minipage}[c]{2.6cm}
+  \includegraphics[width=2.4cm]{photo.jpg}
+\end{minipage}\hfill
+\begin{minipage}[c]{\dimexpr\textwidth-2.9cm\relax}
+  {\fontsize{21}{24}\selectfont Firstname LASTNAME}\\[3pt]
+  {\itshape Short description or professional headline goes here}\\[6pt]
+  \begin{minipage}[t]{0.56\linewidth}\small
+    City, Country\\
+    \href{mailto:email@example.com}{email@example.com}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.40\linewidth}\small\raggedleft
+    Tel.~: +00 00 00 00 00\\
+    \href{https://linkedin.com/in/your-profile/}{linkedin.com/in/your-profile/}\\
+    \href{https://yourportfolio.com/}{yourportfolio.com/}\\
+    Driving licence
+  \end{minipage}
+\end{minipage}
+
+\vspace{6pt}
+{\noindent\color{accent}\rule{\textwidth}{1pt}}
+
+% ---------- BODY ----------
+\columnratio{0.655}
+\setlength{\columnsep}{20pt}
+\begin{paracol}{2}
+
+% ===== LEFT COLUMN =====
+\cvsection{Professional Summary}
+\vspace{5pt}
+{\small Description\_0: Brief professional summary highlighting your background, focus areas, and what makes your profile distinctive.\par}
+
+\cvsection{Education}
+
+\cventry{Degree\_1}
+  {Institution\_1 • City\_1, Country\_1}
+  {MM/YYYY -- MM/YYYY}
+{\footnotesize\itshape Description\_1: Brief description of the programme, specialisation, or relevant coursework.\par}
+
+\cventry{Degree\_2}
+  {Institution\_2 • City\_2, Country\_2}
+  {MM/YYYY -- MM/YYYY}
+{\footnotesize\itshape Description\_2: Brief description of the programme, specialisation, or relevant coursework.\par}
+
+\cventry{Degree\_3}
+  {Institution\_3 • City\_3, Country\_3}
+  {MM/YYYY}
+{\footnotesize\itshape Description\_3: Brief description of the programme, specialisation, or relevant coursework.\par}
+
+\cvsection{Professional Experience}
+
+\cventry{Job\_Title\_1}
+  {Company\_1 • City\_1, Country\_1}
+  {MM/YYYY -- Present}
+{\footnotesize\itshape Description\_1: Brief description of your responsibilities and achievements.\par\vspace{3.5pt}
+Skills: skill\_a · skill\_b · skill\_c.\par}
+
+\cventry{Job\_Title\_2}
+  {Company\_2 • City\_2, Country\_2}
+  {MM/YYYY -- MM/YYYY}
+{\footnotesize\itshape Description\_2: Brief description of your responsibilities and achievements.\par\vspace{3.5pt}
+Skills: skill\_d · skill\_e.\par}
+
+\cventry{Job\_Title\_3}
+  {Company\_3 • City\_3, Country\_3}
+  {MM/YYYY -- MM/YYYY}
+{\footnotesize\itshape Description\_3: Brief description of your responsibilities and achievements.\par\vspace{3.5pt}
+Skills acquired: skill\_f.\par}
+
+\cvsection{Projects}
+\vspace{5pt}
+{\footnotesize
+\textbf{Project\_1} -- Category\_1 - Technology\_1\par
+\itshape Description\_1: Brief description of the project, your role, and key accomplishments.\upshape\par\vspace{3pt}
+\textbf{Project\_2} -- Category\_2 - Technology\_2\par
+\itshape Description\_2: Brief description of the project, your role, and key accomplishments.\upshape\par\vspace{3pt}
+\textbf{Project\_3} -- Category\_3 - Technology\_3\par
+\itshape Description\_3: Brief description of the project, your role, and key accomplishments.\upshape\par\vspace{3pt}
+\textbf{Project\_4} -- Category\_4 - Technology\_4\par
+\itshape Description\_4: Brief description of the project, your role, and key accomplishments.\upshape\par}
+
+\switchcolumn
+
+% ===== RIGHT COLUMN =====
+\cvsection{Areas of Expertise}
+\vspace{5pt}
+\cvdomain{Skills}{%
+Skill\_1 · Skill\_2 · Skill\_3 · Skill\_4 · Skill\_5}
+
+\vspace{7pt}
+
+\cvdomain{Tools}{%
+Tool\_1 · Tool\_2 · Tool\_3 · Tool\_4 · Tool\_5}
+
+\vspace{7pt}
+
+\cvdomain{Programming}{%
+Language\_1 · Language\_2 · Language\_3 · Language\_4 · Language\_5}
+
+\cvsection{Languages}
+\vspace{5pt}
+{\small
+\cvlang{Language\_1}{\lin{Level\_1} -- Certification\_1}
+\cvlang{Language\_2}{\lin{Level\_2}}
+\cvlang{Language\_3}{\lin{Level\_3}}}
+
+\cvsection{Certifications}
+\vspace{5pt}
+{\small
+\textbf{Certification\_1}\par\vspace{1.5pt}
+{\footnotesize\itshape Issuer\_1 · Format\_1\par
+Description\_1: Brief description of the certification and what it covers.\par\vspace{3.5pt}
+Skills: skill\_1 · skill\_2 · skill\_3.\par}\par\vspace{6pt}
+\textbf{Certification\_2}\par\vspace{1.5pt}
+{\footnotesize\itshape Issuer\_2 · Format\_2\par
+Description\_2: Brief description of the certification and what it covers.\par\vspace{3.5pt}
+Skills: skill\_4 · skill\_5.\par}\par}
+
+\cvsection{Activities \& Associations}
+\vspace{5pt}
+{\small
+\textbf{Activity\_1}\par\vspace{1.5pt}
+{\footnotesize Organisation\_1\par
+Description\_1: Brief description of the role and its impact.\par}\par\vspace{3.5pt}
+\textbf{Activity\_2}\par\vspace{1.5pt}
+{\footnotesize Description\_2: Brief description of the activity.\par}\par}
+
+\cvsection{Interests}
+\vspace{5pt}
+{\small
+\textbf{Interest\_1}~: Description\_1.\par\vspace{3.5pt}
+\textbf{Interest\_2}~: Description\_2.\par\vspace{3.5pt}
+\textbf{Interest\_3}~: Description\_3.\par}
+
+\end{paracol}
+
+\end{document}
