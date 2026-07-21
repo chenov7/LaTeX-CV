@@ -28,6 +28,7 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setstretch{1.05}
+\sloppy
 \hyphenpenalty=10000
 \exhyphenpenalty=10000
 
@@ -45,17 +46,17 @@
 
 % Section title (blue)
 \newcommand{\cvsection}[1]{%
-    \vspace{1.2em}
+    \vspace{0.8em}
     {\color{primary}\large\bfseries #1}
-    \vspace{0.6em}
+    \vspace{0.4em}
     \par
 }
 
 % Section title for right column (more spacing)
 \newcommand{\cvsectionright}[1]{%
-    \vspace{2.5em}
+    \vspace{1.5em}
     {\color{primary}\large\bfseries #1}
-    \vspace{0.6em}
+    \vspace{0.4em}
     \par
 }
 
@@ -78,8 +79,10 @@
 }
 
 % Skill bullet point (small 3pt square)
-\newcommand{\cvskill}[1]{%
-    {\color{mediumgray}\small\raisebox{0.3ex}{\rule{3pt}{3pt}}\hspace{0.5em}#1}
+% #2 = main skill (darkgray), #1 = optional sub-skills (lightgray)
+\newcommand{\cvskill}[2][]{%
+    {\small\raisebox{0.3ex}{\color{mediumgray}\rule{3pt}{3pt}}\hspace{0.5em}{\color{darkgray}#2}%
+    \if\relax\detokenize{#1}\relax\else{\color{lightgray} ~- #1}\fi}%
     \par
 }
 
@@ -199,16 +202,27 @@ Created an analytics platform for monitoring AWS costs in real-time. Helped orga
 % --- SKILLS ---
 \cvsection{Skills}
 
+\textbf{Programming Languages}\\
 \cvskill{Python, Go, Java, C++}
-\cvskill{Docker, Kubernetes, AWS}
-\cvskill{PostgreSQL, MongoDB, Redis}
-\cvskill{Microservices architecture}
-\cvskill{RESTful APIs, gRPC}
-\cvskill{CI/CD pipelines (GitLab, Jenkins)}
-\cvskill{System design and scalability}
-\cvskill{Linux/Unix}
+\cvskill{Rust}
+\cvskill{JavaScript}
+
+\vspace{0.6em}
+\textbf{DevOps \& Cloud}\\
+\cvskill[Kubernetes, Docker Compose]{Docker}
+\cvskill[CI/CD, GitHub Actions]{AWS}
+\cvskill[GitLab, Jenkins]{CI/CD pipelines}
 \cvskill{Git version control}
-\cvskill{SQL optimization}
+
+\vspace{0.6em}
+\textbf{Databases \& Backend}\\
+\cvskill[SQL optimization]{PostgreSQL, MongoDB, Redis}
+\cvskill[gRPC]{RESTful APIs}
+\cvskill[Microservices pattern]{System design and scalability}
+
+\vspace{0.6em}
+\textbf{Systems \& Tools}\\
+\cvskill{Linux/Unix}
 \cvskill{Agile/Scrum}
 \cvskill{Technical documentation}
 
@@ -216,7 +230,6 @@ Created an analytics platform for monitoring AWS costs in real-time. Helped orga
 \textbf{Currently Learning}
 \vspace{0.4em}
 
-\cvskill{Rust}
 \cvskill{Machine Learning basics}
 \cvskill{WebAssembly}
 
